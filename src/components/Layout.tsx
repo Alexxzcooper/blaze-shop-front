@@ -1,21 +1,48 @@
-
 import { Outlet } from "react-router-dom";
 import { Code, Smartphone, Mail, Github } from "lucide-react";
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50">
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <a href="/" className="text-xl font-bold text-primary flex items-center gap-2">
-              <Code className="h-6 w-6" />
+            <a 
+              href="/" 
+              className="text-xl font-bold text-primary flex items-center gap-3 
+              transition-transform hover:scale-105 hover:text-primary/80"
+            >
+              <Code className="h-7 w-7 text-primary" />
               FlutterDev
             </a>
-            <div className="flex gap-6">
-              <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            <div className="flex gap-6 items-center">
+              <a 
+                href="#projects" 
+                className="text-gray-600 hover:text-primary 
+                transition-colors font-medium group relative"
+              >
+                Projects
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary 
+                transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a 
+                href="#skills" 
+                className="text-gray-600 hover:text-primary 
+                transition-colors font-medium group relative"
+              >
+                Skills
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary 
+                transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a 
+                href="#contact" 
+                className="text-gray-600 hover:text-primary 
+                transition-colors font-medium group relative"
+              >
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary 
+                transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </div>
           </div>
         </nav>
@@ -24,17 +51,24 @@ const Layout = () => {
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-16">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 
+              bg-gradient-to-r from-primary to-purple-600 text-transparent bg-clip-text">
                 Flutter Mobile App Developer
               </h1>
-              <p className="text-lg text-gray-600 mb-6">
-                Crafting beautiful, high-performance mobile applications with Flutter
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Crafting beautiful, high-performance mobile applications with Flutter, 
+                focusing on elegant design and seamless user experiences.
               </p>
               <div className="flex gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-2 
+                  bg-gradient-to-r from-primary to-purple-600 
+                  text-white px-6 py-3 rounded-lg 
+                  hover:from-primary/90 hover:to-purple-500 
+                  transition-all shadow-lg shadow-primary/30 
+                  transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5" />
                   Contact Me
@@ -43,7 +77,10 @@ const Layout = () => {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+                  className="inline-flex items-center gap-2 
+                  bg-gray-800 text-white px-6 py-3 rounded-lg 
+                  hover:bg-gray-700 transition-colors 
+                  transform hover:-translate-y-1 shadow-md"
                 >
                   <Github className="h-5 w-5" />
                   GitHub
@@ -51,10 +88,13 @@ const Layout = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-30"></div>
-                <div className="relative bg-white p-6 rounded-lg shadow-xl">
-                  <Smartphone className="h-48 w-48 text-primary" />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 
+                rounded-lg blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                <div className="relative bg-white p-6 rounded-lg shadow-xl 
+                group-hover:shadow-2xl transition-shadow">
+                  <Smartphone className="h-48 w-48 text-primary 
+                  transform group-hover:scale-105 transition-transform" />
                 </div>
               </div>
             </div>
@@ -162,7 +202,9 @@ const Layout = () => {
 
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} Flutter Developer Portfolio. All rights reserved.</p>
+          <p className="opacity-70">
+            &copy; {new Date().getFullYear()} Flutter Developer Portfolio. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
